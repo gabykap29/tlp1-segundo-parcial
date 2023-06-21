@@ -24,5 +24,24 @@ app.use( require('./routes/reserva.routes'));
 
 // TODO: Si la petición no coincide con ninguna de las rutas declaradas, mostrar error 404
 
+// 404 - Not found
+app.use((req, res, next) => {
+    res.write(`<div>
+        <h1>404 - Ruta no encontrada</h1>
+        <hr>
+        <p>La pagina que intentas buscar no existe</p>
+        <p>Redireccionando a la página de inicio...</p>
+        <script>
+        (
+          () => setTimeout(() => {
+            window.location.href='http://localhost:${port}/api';
+           }, 3000)           
+        )();
+        </script>
+    </h1>`)
+});
+
+
+
 // Starting the server
 app.listen(port, () => console.log(`Server on port http://localhost:${port}/api`));
