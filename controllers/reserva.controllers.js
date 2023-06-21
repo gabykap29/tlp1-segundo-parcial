@@ -36,31 +36,6 @@ ctrlReservas.obtenerReservas = async (req, res) => {
     }
 }
 
-// Ctrl para obtener una tarea
-// ctrlTarea.obtenerTarea = async (req, res) => {
-//     const { id } = req.params;
-
-//     try {
-//         const tarea = await Tarea.findOne({
-//             where: {
-//                 id,
-//                 estado: true
-//             }
-//         });
-
-//         if (!tarea) {
-//             throw ({
-//                 status: 404,
-//                 message: 'No existe la tarea'
-//             })
-//         }
-    
-//         return res.json(tarea);
-
-//     } catch (error) {
-//         return res.status(error.status || 500).json(error.message || 'Error interno del servidor');
-//     }
-// }
 
 // Ctrl para crear una tarea
 ctrlReservas.crearReservas = async (req, res) => {

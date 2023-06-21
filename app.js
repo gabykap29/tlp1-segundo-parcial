@@ -5,7 +5,7 @@ const express = require('express');
 const path = require('path');
 
 require('dotenv').config();
-require('ejs')
+
 const app = express();
 
 // Middlewares
@@ -15,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
 app.use(express.static(path.join(__dirname, 'public')));
+require('ejs'); 
 app.set('view engine', 'ejs');
 
 const port = process.env.PORT || 3000;
@@ -44,4 +45,4 @@ app.use((req, res, next) => {
 
 
 // Starting the server
-app.listen(port, () => console.log(`Server on port http://localhost:${port}/api`));
+app.listen(port, () => console.log(`Server on port http://localhost:${port}/reservas`));

@@ -10,6 +10,21 @@ const router = express.Router()
 //         Rutas para renderizar vistas
 // ==========================================
 
+router.get('/reservas', (req, res) => {
+    res.render('index');
+});
+
+router.get('/reserva/editar/:id', (req, res) => {
+
+    const tareaId = req.params.id;
+    res.render('editar', { id: tareaId });
+});
+
+router.get('/reserva/crear', (req, res) => {
+    res.render('crear');
+});
+
+
 // Obtener todas las reservas
 
 // Formulario para crear una reserva
@@ -21,19 +36,16 @@ const router = express.Router()
 // ==========================================
 
 // Obtener todas las reservas
-router.get('/api/',(req,res)=>{
-    res.render('index');
-});
  
 
 router.get('/api/reservas/', obtenerReservas);
 
 
-router.post('/api/reservas/',  crearReservas);
+router.post('/api/reservas/create',  crearReservas);
 
-router.put('/api/tarea/:id', actualizarReserva);
+router.put('/api/reservas/:id', actualizarReserva);
 
-router.delete('/api/tarea/:id', eliminarReservas);
+router.delete('/api/reservas/:id', eliminarReservas);
 
  
  module.exports = router;
