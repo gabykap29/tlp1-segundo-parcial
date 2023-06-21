@@ -69,8 +69,9 @@ ctrlReservas.actualizarReserva = async (req, res) => {
     
     try {
         const reservaActualizada = await Reserva.update({
-            titulo,
-            descripcion
+            nombre,
+            apellido,
+            codigo
         }, {
             where: {
                 id,

@@ -15,9 +15,8 @@ router.get('/reservas', (req, res) => {
 });
 
 router.get('/reserva/editar/:id', (req, res) => {
-
-    const tareaId = req.params.id;
-    res.render('editar', { id: tareaId });
+    const id = req.params.id;
+    res.render('editar', { id: id });
 });
 
 router.get('/reserva/crear', (req, res) => {
