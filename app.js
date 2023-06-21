@@ -20,9 +20,9 @@ app.set('view engine', 'ejs');
 const port = process.env.PORT || 3000;
 
 // Routes
-app.use('/api', require('./routes/reserva.routes'));
+app.use( require('./routes/reserva.routes'));
 
 // TODO: Si la petición no coincide con ninguna de las rutas declaradas, mostrar error 404
 
 // Starting the server
-app.listen(port, () => console.log(`Server on port http://localhost:${port}/api/`));
+app.listen(port, () => console.log(`Server on port http://localhost:${port}/api`));

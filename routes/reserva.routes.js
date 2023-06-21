@@ -18,7 +18,9 @@ const router = require('express').Router();
 // ==========================================
 
 // Obtener todas las reservas
-router.get('/api/',);
+router.get('/api/',(req,res)=>{
+    res.send('Servidor en marcha');
+});
  
 // Crear una reserva
 router.post('/api/',);
